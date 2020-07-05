@@ -99,13 +99,13 @@ def createframe(txt,filename):
                 intframe[col] = pd.DataFrame([item.split(' ')[0] if pd.isnull(item) == False else item for item in intframe[col].tolist()])
                 intframe[col]=pd.to_datetime(intframe[col],errors='coerce')
             except Exception as e:
-                print(e)
+                logging.warning('{}:{}:{}'.format(filename,'datetime error',e))
         for col in ['Sanctions Ordered','Sum of All Relief Awarded','Sanctions Ordered or Relief Granted']:
             if col in intframe.columns:
                 try:
                     intframe[col+' Amount'] = pd.DataFrame([float(searchlist(item.split(' '),'$')[0].replace('$','').replace(',','')) if len(searchlist(item.split(' '),'$'))>0 and pd.isnull(item) == False else 0 for item in intframe[col].tolist()])
                 except Exception as e:
-                    print(e)
+                    logging.warning('{}:{}:{}'.format(filename,'amount to float error',e))
         for floatcol in [item for item in ['Sum of All Relief Awarded','Sum of All Relief Requested'] if item in intframe.columns]:
             intframe[floatcol]=intframe[floatcol].str.replace('$','').str.replace(',','')
             intframe[floatcol] = pd.to_numeric(intframe[floatcol],errors='ignore')
