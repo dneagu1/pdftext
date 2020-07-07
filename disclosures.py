@@ -72,8 +72,6 @@ def processtext(sample,keep_cols):
                     finlst[x] = [keystr,txtstr]
                 else:
                     finlst[x] = [keystr]
-        if 'Filed' in finlst[x][0]:
-            finlst[x][0] = 'Date Court Action Filed'
         if 'Current Status' in finlst[x][0] and ('Final' in finlst[x][1] or 'FINAL' in finlst[x][1]):
             finlst[x][1] = 'Final'
         if len(finlst[x]) > 2: ## Combine additional arrays
