@@ -12,6 +12,20 @@ WARNING:root:decr_15750.pdf.txt:index 7:amount to float error:'NoneType' object 
 WARNING:root:decr_15750.pdf.txt:index 8:amount to float error:'NoneType' object has no attribute 'split'
 WARNING:root:decr_15750.pdf.txt:index 9:missing columns:['Examples of events that are not required to be reported or are no longer reportable include', 'For more information about the following, select the associated link']
 WARNING:root:decr_15750.pdf.txt:index 9:amount to float error:'NoneType' object has no attribute 'split'
+CRITICAL:root:decr_128096.pdf.txt:upload error:0
+WARNING:root:decr_26354.pdf.txt:index 5:amount to float error:'NoneType' object has no attribute 'split'
+CRITICAL:root:decr_104150.pdf.txt:upload error:0
+WARNING:root:decr_15750.pdf.txt:index 0:amount to float error:'NoneType' object has no attribute 'split'
+WARNING:root:decr_15750.pdf.txt:index 1:amount to float error:'NoneType' object has no attribute 'split'
+WARNING:root:decr_15750.pdf.txt:index 2:amount to float error:'NoneType' object has no attribute 'split'
+WARNING:root:decr_15750.pdf.txt:index 3:amount to float error:'NoneType' object has no attribute 'split'
+WARNING:root:decr_15750.pdf.txt:index 4:amount to float error:'NoneType' object has no attribute 'split'
+WARNING:root:decr_15750.pdf.txt:index 5:amount to float error:'NoneType' object has no attribute 'split'
+WARNING:root:decr_15750.pdf.txt:index 6:amount to float error:'NoneType' object has no attribute 'split'
+WARNING:root:decr_15750.pdf.txt:index 7:amount to float error:'NoneType' object has no attribute 'split'
+WARNING:root:decr_15750.pdf.txt:index 8:amount to float error:'NoneType' object has no attribute 'split'
+WARNING:root:decr_15750.pdf.txt:index 9:missing columns:['Examples of events that are not required to be reported or are no longer reportable include', 'For more information about the following, select the associated link']
+WARNING:root:decr_15750.pdf.txt:index 9:amount to float error:'NoneType' object has no attribute 'split'
 CRITICAL:root:decr_153053.pdf.txt:upload error:0
 WARNING:root:decr_15749.pdf.txt:index 0:amount to float error:'NoneType' object has no attribute 'split'
 WARNING:root:decr_15749.pdf.txt:index 1:missing columns:['Examples of events that are not required to be reported or are no longer reportable include', 'For more information about the following, select the associated link']
@@ -4976,16 +4990,16 @@ WARNING:root:decr_2091.pdf.txt:index 18:missing columns:['All rights Type']
 WARNING:root:decr_2091.pdf.txt:index 33:missing columns:['FINRA. All Number']
 WARNING:root:decr_2091.pdf.txt:index 34:missing columns:['Date']
 WARNING:root:decr_2091.pdf.txt:index 48:missing columns:['Initiated']
-WARNING:root:decr_2091.pdf.txt:index 50:missing columns:['Judgment/Lien Holder', 'Judgment/Lien Type', 'Judgment/Lien Amount']
-WARNING:root:decr_2091.pdf.txt:index 51:missing columns:['Judgment/Lien Holder', 'Judgment/Lien Type', 'Judgment/Lien Amount']
-WARNING:root:decr_2091.pdf.txt:index 52:missing columns:['Judgment/Lien Holder', 'Judgment/Lien Type', 'Judgment/Lien Amount']
-WARNING:root:decr_2091.pdf.txt:index 53:missing columns:['Judgment/Lien Holder', 'Judgment/Lien Type', 'Judgment/Lien Amount']
-WARNING:root:decr_2091.pdf.txt:index 54:missing columns:['Judgment/Lien Holder', 'Judgment/Lien Type', 'Judgment/Lien Amount']
-WARNING:root:decr_2091.pdf.txt:index 55:missing columns:['Judgment/Lien Holder', 'Judgment/Lien Type', 'Judgment/Lien Amount']
-WARNING:root:decr_2091.pdf.txt:index 56:missing columns:['Judgment/Lien Holder', 'Judgment/Lien Type', 'Judgment/Lien Amount']
-WARNING:root:decr_2091.pdf.txt:index 57:missing columns:['Judgment/Lien Holder', 'Judgment/Lien Type', 'Judgment/Lien Amount']
-WARNING:root:decr_2091.pdf.txt:index 58:missing columns:['Judgment/Lien Holder', 'Judgment/Lien Type', 'Judgment/Lien Amount']
-WARNING:root:decr_2091.pdf.txt:index 59:missing columns:['Judgment/Lien Holder', 'Judgment/Lien Type', 'Judgment/Lien Amount']
+WARNING:root:decr_2091.pdf.txt:index 50:missing columns:['Judgment/Lien Holder', 'Judgment/Lien Type', 'Judgment/Lien Amount', 'Date Filed']
+WARNING:root:decr_2091.pdf.txt:index 51:missing columns:['Judgment/Lien Holder', 'Judgment/Lien Type', 'Judgment/Lien Amount', 'Date Filed']
+WARNING:root:decr_2091.pdf.txt:index 52:missing columns:['Judgment/Lien Holder', 'Judgment/Lien Type', 'Judgment/Lien Amount', 'Date Filed']
+WARNING:root:decr_2091.pdf.txt:index 53:missing columns:['Judgment/Lien Holder', 'Judgment/Lien Type', 'Judgment/Lien Amount', 'Date Filed']
+WARNING:root:decr_2091.pdf.txt:index 54:missing columns:['Judgment/Lien Holder', 'Judgment/Lien Type', 'Judgment/Lien Amount', 'Date Filed']
+WARNING:root:decr_2091.pdf.txt:index 55:missing columns:['Judgment/Lien Holder', 'Judgment/Lien Type', 'Judgment/Lien Amount', 'Date Filed']
+WARNING:root:decr_2091.pdf.txt:index 56:missing columns:['Judgment/Lien Holder', 'Judgment/Lien Type', 'Judgment/Lien Amount', 'Date Filed']
+WARNING:root:decr_2091.pdf.txt:index 57:missing columns:['Judgment/Lien Holder', 'Judgment/Lien Type', 'Judgment/Lien Amount', 'Date Filed']
+WARNING:root:decr_2091.pdf.txt:index 58:missing columns:['Judgment/Lien Holder', 'Judgment/Lien Type', 'Judgment/Lien Amount', 'Date Filed']
+WARNING:root:decr_2091.pdf.txt:index 59:missing columns:['Judgment/Lien Holder', 'Judgment/Lien Type', 'Judgment/Lien Amount', 'Date Filed']
 CRITICAL:root:decr_130747.pdf.txt:upload error:0
 CRITICAL:root:decr_13042.pdf.txt:upload error:list index out of range
 CRITICAL:root:decr_129586.pdf.txt:upload error:0
@@ -7132,7 +7146,7 @@ CRITICAL:root:decr_103912.pdf.txt:upload error:0
 CRITICAL:root:decr_37378.pdf.txt:upload error:0
 CRITICAL:root:decr_165587.pdf.txt:upload error:0
 CRITICAL:root:decr_301394.pdf.txt:upload error:0
-WARNING:root:decr_37058.pdf.txt:index 0:missing columns:['Judgment/Lien Holder', 'Judgment/Lien Type', 'Judgment/Lien Amount']
+WARNING:root:decr_37058.pdf.txt:index 0:missing columns:['Judgment/Lien Holder', 'Judgment/Lien Type', 'Judgment/Lien Amount', 'Date Filed']
 CRITICAL:root:decr_148515.pdf.txt:upload error:0
 CRITICAL:root:decr_17402.pdf.txt:upload error:0
 CRITICAL:root:decr_126059.pdf.txt:upload error:0
@@ -11521,10 +11535,10 @@ WARNING:root:decr_19720.pdf.txt:index 0:missing columns:['Examples of events tha
 WARNING:root:decr_19720.pdf.txt:index 0:amount to float error:'NoneType' object has no attribute 'split'
 WARNING:root:decr_117028.pdf.txt:index 4:missing columns:['FINRA. All Number']
 WARNING:root:decr_117028.pdf.txt:index 6:missing columns:['Details']
-WARNING:root:decr_117028.pdf.txt:index 11:missing columns:['Judgment/Lien Holder', 'Judgment/Lien Type', 'Judgment/Lien Amount']
-WARNING:root:decr_117028.pdf.txt:index 12:missing columns:['Judgment/Lien Holder', 'Judgment/Lien Type', 'Judgment/Lien Amount']
-WARNING:root:decr_117028.pdf.txt:index 13:missing columns:['Judgment/Lien Holder', 'Judgment/Lien Type', 'Judgment/Lien Amount']
-WARNING:root:decr_117028.pdf.txt:index 14:missing columns:['Judgment/Lien Holder', 'Type', 'Judgment/Lien Type', 'Judgment/Lien Amount']
+WARNING:root:decr_117028.pdf.txt:index 11:missing columns:['Judgment/Lien Holder', 'Judgment/Lien Type', 'Judgment/Lien Amount', 'Date Filed']
+WARNING:root:decr_117028.pdf.txt:index 12:missing columns:['Judgment/Lien Holder', 'Judgment/Lien Type', 'Judgment/Lien Amount', 'Date Filed']
+WARNING:root:decr_117028.pdf.txt:index 13:missing columns:['Judgment/Lien Holder', 'Judgment/Lien Type', 'Judgment/Lien Amount', 'Date Filed']
+WARNING:root:decr_117028.pdf.txt:index 14:missing columns:['Judgment/Lien Holder', 'Type', 'Judgment/Lien Type', 'Judgment/Lien Amount', 'Date Filed']
 WARNING:root:decr_28722.pdf.txt:index 0:amount to float error:'NoneType' object has no attribute 'split'
 WARNING:root:decr_28722.pdf.txt:index 1:amount to float error:'NoneType' object has no attribute 'split'
 WARNING:root:decr_10879.pdf.txt:index 0:amount to float error:'NoneType' object has no attribute 'split'
@@ -14913,8 +14927,8 @@ CRITICAL:root:decr_133842.pdf.txt:upload error:0
 WARNING:root:decr_10465.pdf.txt:index 4:amount to float error:'NoneType' object has no attribute 'split'
 WARNING:root:decr_10465.pdf.txt:index 5:amount to float error:'NoneType' object has no attribute 'split'
 CRITICAL:root:decr_175356.pdf.txt:upload error:0
-WARNING:root:decr_37106.pdf.txt:index 1:missing columns:['Judgment/Lien Holder', 'Judgment/Lien Type', 'Judgment/Lien Amount']
-WARNING:root:decr_37106.pdf.txt:index 2:missing columns:['Judgment/Lien Holder', 'Judgment/Lien Type', 'Judgment/Lien Amount']
+WARNING:root:decr_37106.pdf.txt:index 1:missing columns:['Judgment/Lien Holder', 'Judgment/Lien Type', 'Judgment/Lien Amount', 'Date Filed']
+WARNING:root:decr_37106.pdf.txt:index 2:missing columns:['Judgment/Lien Holder', 'Judgment/Lien Type', 'Judgment/Lien Amount', 'Date Filed']
 WARNING:root:decr_10729.pdf.txt:index 0:amount to float error:'NoneType' object has no attribute 'split'
 WARNING:root:decr_10729.pdf.txt:index 1:missing columns:['3/5/86,']
 WARNING:root:decr_10729.pdf.txt:index 1:amount to float error:'NoneType' object has no attribute 'split'
@@ -18898,7 +18912,7 @@ WARNING:root:decr_7040.pdf.txt:index 0:missing columns:['Examples of events that
 WARNING:root:decr_7040.pdf.txt:index 0:amount to float error:'NoneType' object has no attribute 'split'
 CRITICAL:root:decr_142206.pdf.txt:upload error:0
 CRITICAL:root:decr_5346.pdf.txt:upload error:0
-WARNING:root:decr_35502.pdf.txt:index 2:missing columns:['Judgment/Lien Holder', 'Judgment/Lien Type', 'Judgment/Lien Amount']
+WARNING:root:decr_35502.pdf.txt:index 2:missing columns:['Judgment/Lien Holder', 'Judgment/Lien Type', 'Judgment/Lien Amount', 'Date Filed']
 WARNING:root:decr_17839.pdf.txt:index 8:missing columns:['FINRA.Ordered']
 WARNING:root:decr_17839.pdf.txt:index 13:amount to float error:'NoneType' object has no attribute 'split'
 WARNING:root:decr_17839.pdf.txt:index 16:missing columns:['All rightsRequested']
@@ -19375,7 +19389,7 @@ WARNING:root:decr_7190.pdf.txt:index 0:amount to float error:could not convert s
 CRITICAL:root:decr_161313.pdf.txt:upload error:0
 CRITICAL:root:decr_153489.pdf.txt:upload error:0
 WARNING:root:decr_124245.pdf.txt:index 0:missing columns:['FINRA.Source']
-WARNING:root:decr_124245.pdf.txt:index 8:missing columns:['Judgment/Lien Holder', 'Judgment/Lien Type', 'Judgment/Lien Amount']
+WARNING:root:decr_124245.pdf.txt:index 8:missing columns:['Judgment/Lien Holder', 'Judgment/Lien Type', 'Judgment/Lien Amount', 'Date Filed']
 CRITICAL:root:decr_114212.pdf.txt:upload error:0
 CRITICAL:root:decr_147564.pdf.txt:upload error:0
 CRITICAL:root:decr_155984.pdf.txt:upload error:0

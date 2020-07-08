@@ -16,44 +16,32 @@ def processtext(sample,keep_cols):
     'Other Sanction(s)/Relief':'Sought',
     'Sanctions Ordered or Relief':'Granted',
     'Appealed To and Date Appeal':'Filed',
+    'Appellate Court Name and':'Date Appeal Filed',
     'Firm Statement':'',
     'Regulator Statement':''}
+    termlst = ['Sought:','Granted:','Filed:','Date Appeal Filed:']
     keylst = [':'] + list(headerdict.keys()) #Start Text
     for num in range(len(sample)):
-        for x in range(10): # Avoid Date columns
+        for x in range(10): # Ensure that dates don't end up as column headers
             sample[num] = sample[num].replace(str(x)+':',str(x))
-        if any([item in sample[num] for item in keylst]) ==True and sample[num].strip() not in ['Sought:','Granted:','Filed:']: # variable name either in dictionary or has ":"
-         # or any([thing for thing in keep_cols if thing in sample_num]):
-            ### Find Start(element) text and Stop(idx) locations for each field
+        if any([item in sample[num] for item in keylst]) ==True and sample[num].strip() not in termlst: # variable name either in dictionary or has ":"
             element,idx = sample[num],num+1
-            # if ('Sought:' not in sample[num] and 'Granted:' not in sample[num]) or ('Relief Sought:' in sample[num]) else ' '.join(sample[num-1:num+1])
-            try: # start appending to original text
+            try: # Append rows that belong to the same data field
                 remaining = sample[idx]
-                # if 'Sanction(s)' in element:
-                #     print('first')
-                #     print([element,remaining])
-                #     print(any([ele in remaining for ele in keylst]))
-                #     print(any([item==remaining.strip() for item in ['Sought:','Granted:','Filed:']]))
-                if any([ele in remaining for ele in keylst])==False or any([item==remaining.strip() for item in ['Sought:','Granted:','Filed:']])==True:
+                if any([ele in remaining for ele in keylst])==False or any([item==remaining.strip() for item in termlst])==True:
                     if 'Does the order constitute' in element:
                         while 'Yes' not in element and 'No' not in element:
                             idx+=1
                             element += ' ' + remaining
                             remaining = sample[idx]
-                        element = element.replace('Sanctions Ordered','')
+                        element = element.replace('Sanctions Ordered','') # These two headers are listed before their respective data values
                     else:
-
-                        #     print(any([ele in remaining for ele in keylst]))
-                        #     print(any([item==remaining.strip() for item in ['Sought:','Granted:','Filed:']]))
-                        while any([ele in remaining for ele in keylst])==False or any([item==remaining.strip() for item in ['Sought:','Granted:','Filed:']])==True:
+                        while any([ele in remaining for ele in keylst])==False or any([item==remaining.strip() for item in termlst])==True:
                             idx+=1
-                            # if 'Sanction(s)/Relief' not in remaining and 'Sanctions Ordered or Relief' not in remaining and 'Appealed To and Date Appeal' not in remaining:
                             element += ' ' + remaining
                             remaining = sample[idx]
-                        if 'Sanctions Ordered' in element:
+                        if 'Sanctions Ordered' in element: # These two headers are listed before their respective data values
                             element = element.replace('Yes','').replace('No','')
-                        # if 'Sanction(s)' in element:
-                            # print(element)
             except:
                 pass
             finlst.append(element)
@@ -61,20 +49,17 @@ def processtext(sample,keep_cols):
     for x in range(len(finlst)):
         finlst[x] = [item.strip() for item in finlst[x] if item !='']
         ### Special Conditions:
-        # print(finlst[x])
-        for key in list(headerdict.keys()):
+        for key in list(headerdict.keys()): ## DataFrame headers that have more than 1 row
             if key in finlst[x][0]:
-                # if 'Sanction(s)' in finlst[x][0]:
-                #     print(finlst[x])
                 keystr = key + ' ' + headerdict[key] if headerdict[key] != '' else key
                 txtstr = ' '.join(finlst[x]).replace(key,'').replace(headerdict[key],'').strip()
                 if txtstr != '':
                     finlst[x] = [keystr,txtstr]
                 else:
                     finlst[x] = [keystr]
-        if 'Current Status' in finlst[x][0] and ('Final' in finlst[x][1] or 'FINAL' in finlst[x][1]):
+        if 'Current Status' in finlst[x][0] and ('Final' in finlst[x][1] or 'FINAL' in finlst[x][1]): # Delete unnecessary text
             finlst[x][1] = 'Final'
-        if len(finlst[x]) > 2: ## Combine additional arrays
+        if len(finlst[x]) > 2: ## Concatenate trailing lists
             finlst[x][1] = ' '.join(finlst[x][1:]).strip()
             del finlst[x][2:]
         if finlst[x][0].isupper():
@@ -116,12 +101,12 @@ def createframe(txt,filename):
         if missing!=[]: ## Log Missing columns
             logging.warning('{}:index {}:{}:{}'.format(filename,str(numiter),'missing columns',str(missing)))
         intframe = intframe.drop(columns=missing).reset_index(drop=True)
-        for col in [item for item in ['Date Initiated','Resolution Date','Case Initiated','Disposition Date','Date Court Action Filed','Date Notice/Process Served'] if item in intframe.columns]:
+        for col in [item for item in ['Date Initiated','Date Appeal Filed','Resolution Date','Case Initiated','Disposition Date','Date Court Action Filed','Date Notice/Process Served'] if item in intframe.columns]:
             try:
                 intframe[col] = pd.DataFrame([item.split(' ')[0] if pd.isnull(item) == False else item for item in intframe[col].tolist()])
                 intframe[col]=pd.to_datetime(intframe[col],errors='coerce')
             except Exception as e:
-                logging.warning('{}:index {}:{}:{}'.format(filename,str(numiter),'datetime error',e))
+                logging.warning('{}:index {}:{}:{}'.format(filename,str(numiter),'datetime error',e)) # Log Datetime errors
         for col in ['Sanctions Ordered','Sum of All Relief Awarded','Sanctions Ordered or Relief Granted','Payout Details']:
             if col in intframe.columns:
                 try:
@@ -129,7 +114,7 @@ def createframe(txt,filename):
                 except Exception as e: # Log Dollar amount errors
                     logging.warning('{}:index {}:{}:{}'.format(filename,str(numiter),'amount to float error',e))
         for floatcol in [item for item in ['Sum of All Relief Awarded','Sum of All Relief Requested'] if item in intframe.columns]:
-            intframe[floatcol]=intframe[floatcol].str.replace('$','').str.replace(',','')
+            intframe[floatcol]=intframe[floatcol].str.replace('$','').str.replace(',','').str.replace('(','').str.replace(')','')
             intframe[floatcol] = pd.to_numeric(intframe[floatcol],errors='ignore')
         intframe['timestamp'] = pd.Timestamp.now()
         intframe['firmId'] =  firmid
